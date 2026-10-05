@@ -1,39 +1,75 @@
+/* ============================================================
+   Reset
+   ============================================================ */
+
+/* Remove default browser spacing so we control layout ourselves */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Padding is included in width/height */
 }
+
+/* ============================================================
+   Page
+   ============================================================ */
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f7f7f4;
+    background-color: #f7f7f4; /* Page background */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center; /* Center cards horizontally */
+    align-items: center;     /* Center cards vertically */
+    min-height: 100vh;       /* Fill the full viewport height */
     padding: 20px;
 }
 
+/* Fixed chip at the top of the page */
+.page-label {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%); /* True horizontal center */
+    font-size: 14px;
+    color: #666;
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.page-label strong {
+    color: #333;
+}
+
+/* ============================================================
+   Card row
+   ============================================================ */
+
 .cards-container {
     display: flex;
-    flex-direction: row;
-    gap: 24px;
-    flex-wrap: nowrap;
+    flex-direction: row;     /* Cards sit side by side */
+    gap: 24px;               /* Space between cards */
+    flex-wrap: nowrap;       /* Keep cards on one row */
     justify-content: center;
     align-items: flex-start;
 }
 
+/* ============================================================
+   Card
+   ============================================================ */
+
 .card {
     display: flex;
-    flex-direction: column;
-    min-height: 380px;
+    flex-direction: column;  /* Stack title, features, then button */
+    min-height: 380px;       /* Equal visual height across cards */
     background-color: #f2f1ed;
     border-radius: 4px;
     padding: 16px;
     width: 320px;
-    flex-shrink: 0;
+    flex-shrink: 0;          /* Do not squash cards when space is tight */
 }
 
+/* Title + price + features (everything above the button) */
 .card-top {
     display: flex;
     flex-direction: column;
@@ -47,11 +83,15 @@ body {
     margin-bottom: 8px;
 }
 
+/* ============================================================
+   Price
+   ============================================================ */
+
 .card-price {
     font-size: 20px;
-    color: rgba(38, 37, 30, 0.5);
+    color: rgba(38, 37, 30, 0.5); /* 50% opacity of the brand text color */
     display: inline-flex;
-    align-items: baseline;
+    align-items: baseline;        /* Align $20 and /mo. on the text baseline */
 }
 
 .card-price-amount {
@@ -65,6 +105,10 @@ body {
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* ============================================================
+   Features
+   ============================================================ */
+
 .card-content {
     margin-bottom: 32px;
 }
@@ -76,7 +120,7 @@ body {
 }
 
 .features-list {
-    list-style: none;
+    list-style: none; /* Hide default bullets; we use checkmarks instead */
     padding: 0;
 }
 
@@ -95,12 +139,17 @@ body {
     font-weight: 400;
 }
 
+/* ============================================================
+   Buttons
+   Default = secondary (light gray)
+   ============================================================ */
+
 .download-button {
-    margin-top: auto;
-    width: fit-content;
+    margin-top: auto;        /* Push button to the bottom of the card */
+    width: fit-content;      /* Button only as wide as its label */
     background-color: #e6e5e0;
     border: none;
-    border-radius: 999px;
+    border-radius: 999px;    /* Fully rounded pill */
     padding: 14px 24px;
     font-size: 16px;
     font-weight: 500;
@@ -114,9 +163,10 @@ body {
 }
 
 .download-button:active {
-    background-color: #D8D6CE;
+    background-color: #f9f8f5; /* Pressed state */
 }
 
+/* Dark filled CTA — used on the Pro card */
 .download-button.primary {
     background-color: #111;
     color: #fff;
@@ -130,19 +180,17 @@ body {
     background-color: #333;
 }
 
-.page-label {
-    position: fixed;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    color: #666;
-    background: #fff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+/* Outlined variant — available, not used on this page */
+.download-button.tertiary {
+    background-color: #D8D6CE;
+    color: #333;
+    border: 1px solid #a1a1a1;
 }
 
-.page-label strong {
-    color: #333;
+.download-button.tertiary:hover {
+    background-color: #D8D6CE;
+}
+
+.download-button.tertiary:active {
+    background-color: #D8D6CE;
 }
