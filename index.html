@@ -1,27 +1,46 @@
 <!DOCTYPE html>
+<!-- Tells the browser this is a modern HTML5 document -->
 <html lang="en">
 <head>
+    <!-- Character encoding so special characters display correctly -->
     <meta charset="UTF-8">
+    <!-- Makes the layout scale correctly on phones and tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Text shown in the browser tab -->
     <title>Pricing Plans — HTML version</title>
+
+    <!-- Speeds up loading of Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Loads Inter in the weights used by this page -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Connects this HTML file to styles.css -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Fixed label so you can tell this is the static HTML version -->
     <p class="page-label"><strong>HTML version</strong> — static markup</p>
+
+    <!-- Horizontal row that holds all pricing cards -->
     <div class="cards-container">
+
+        <!-- Hobby plan card -->
         <div class="card">
+            <!-- Top block: title, price, and feature list -->
             <div class="card-top">
                 <h3 class="card-title">Hobby</h3>
                 <p class="card-price">
+                    <!-- Price text only (no /mo. on the free plan) -->
                     <span class="card-price-amount">Free</span>
                 </p>
+                <!-- Feature list for this plan -->
                 <div class="card-content">
                     <p class="includes-text">Includes:</p>
                     <ul class="features-list">
                         <li>
+                            <!-- Checkmark sits beside each feature -->
                             <span class="checkmark">✓</span>
                             No credit card required
                         </li>
@@ -36,12 +55,16 @@
                     </ul>
                 </div>
             </div>
+            <!-- secondary = light gray button style -->
             <button class="download-button secondary">Download</button>
         </div>
+
+        <!-- Pro plan card -->
         <div class="card">
             <div class="card-top">
                 <h3 class="card-title">Pro</h3>
                 <p class="card-price">
+                    <!-- Amount and period are split so they can be styled separately -->
                     <span class="card-price-amount">$20</span>
                     <span class="card-price-period">/mo.</span>
                 </p>
@@ -67,8 +90,40 @@
                     </ul>
                 </div>
             </div>
+            <!-- primary = dark filled button style -->
             <button class="download-button primary">Get Pro</button>
         </div>
+
+        <!-- Enterprise plan card — copy this block to add another card in the row -->
+        <div class="card">
+            <div class="card-top">
+                <h3 class="card-title">Enterprise</h3>
+                <p class="card-price">
+                    <!-- Custom pricing — no /mo. period, same as Hobby -->
+                    <span class="card-price-amount">Custom</span>
+                </p>
+                <div class="card-content">
+                    <p class="includes-text">Everything in Pro, plus:</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Unlimited Agent requests
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Unlimited Tab completions
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Background Agents
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- primary = dark filled button style, same as Pro -->
+            <button class="download-button primary">Contact Sales</button>
+        </div>
+
     </div>
 </body>
 </html>
