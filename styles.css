@@ -180,11 +180,10 @@ body {
     background-color: #333;
 }
 
-/* Outlined variant — available, not used on this page */
 .download-button.tertiary {
-    background-color: #D8D6CE;
+    background-color: transparent;
     color: #333;
-    border: 1px solid #a1a1a1;
+    border: 1px solid #d3cbb5;
 }
 
 .download-button.tertiary:hover {
@@ -192,5 +191,5 @@ body {
 }
 
 .download-button.tertiary:active {
-    background-color: #D8D6CE;
+    background-color: #d3cbb5;
 }
